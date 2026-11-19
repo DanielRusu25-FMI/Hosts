@@ -1,5 +1,20 @@
 #!/bin/bash
 
+if [ $# -lt 1 ]; then
+		echo "Usage $0 path_to_host_file"
+		exit 1
+fi
+
+hosts_file="$1"
+
+if [ ! -f "$hosts_file" ]; then
+	echo "Error: File $host_file does note exist!"
+	exit 1
+fi
+
+
+
+
 verify-IP(){
 	file_ip=$1
 	host_name=$2
@@ -19,7 +34,6 @@ while read -r ip name; do
 		verify-IP "$ip" "$name"
 	fi
 
-done < "$HOME/etc/hosts"
-
+done < "$hosts_file"
 
 
