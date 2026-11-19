@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Edited by personal account"
+
 if [ $# -lt 1 ]; then
 		echo "Usage $0 path_to_host_file"
 		exit 1
